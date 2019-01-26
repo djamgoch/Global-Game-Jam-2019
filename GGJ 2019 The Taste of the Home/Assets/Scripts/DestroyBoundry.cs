@@ -2,13 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DestroyByBoundry : MonoBehaviour
+public class DestroyBoundry : MonoBehaviour
 {
 
     private void OnTriggerExit2D(Collider2D other) // when something leaves the game map it dies =(
     {
-        Debug.Log("Destroying");
-        Destroy(other.gameObject);
+
+        if (other.tag == "player")
+        {
+            other.transform.position = GameManager.instance.PlayerSpawnPosition;   
+        }
+        else
+        {
+            Destroy(other.gameObject);
+        }
     }
 
     // Start is called before the first frame update
