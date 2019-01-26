@@ -1117,7 +1117,9 @@ MonoBehaviour:
   EnemySpawns: []
   SpawnInterval: 1
   SpawnTime: 0
-  Enemy: {fileID: 5081907186526272310, guid: 7d2205e97fb352549ae17416e6c642a6, type: 3}
+  Enemies:
+  - {fileID: 5081907186526272310, guid: 7d2205e97fb352549ae17416e6c642a6, type: 3}
+  - {fileID: 5371748781218072053, guid: e3ef63d24e760d34ba8b3d5756308805, type: 3}
   Score: {fileID: 1542730801}
   scoreText: 'Score : '
   GameTime: 30
@@ -1171,6 +1173,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   speed: 8
+  horizontalSpeed: 8
+  verticalSpeed: 5
   damage: 1
   cooldown: 0.3
   shootTime: 0

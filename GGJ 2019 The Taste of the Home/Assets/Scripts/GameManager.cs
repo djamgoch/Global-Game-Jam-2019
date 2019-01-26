@@ -19,7 +19,9 @@ public class GameManager : MonoBehaviour
     [HideInInspector]
     public float SpawnTime = 0f;
 
-    public GameObject Enemy;
+
+    public GameObject[] Enemies;
+    //public GameObject Enemy;
 
     public Text Score; 
     [HideInInspector]
@@ -30,6 +32,8 @@ public class GameManager : MonoBehaviour
     public float timeIncrement = 0f;
 
     public Text Timer;
+
+   
 
     private void Awake()
     {
@@ -47,7 +51,6 @@ public class GameManager : MonoBehaviour
 
     public void ChangeScore(int change) //could be a positive or negaitve change
     {
-        Debug.Log("Changing score by " + change);
         instance.score += change;
         ResetScoreText();
        
@@ -68,8 +71,12 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        StartCoroutine("SpawnEnemies");
-        StartCoroutine("GameTimer");
+        if(GameTime > 0 )
+        {
+            StartCoroutine("SpawnEnemies");
+            StartCoroutine("GameTimer");
+        }
+
     }
 
     public IEnumerator GameTimer()
@@ -80,6 +87,9 @@ public class GameManager : MonoBehaviour
             GameTime -= 1;
             Timer.text = GameTime.ToString();
         }
+
+        if (GameTime <= 0)
+            Debug.Log("Game is over! Well this minigame at least");
         yield return null;
     }
 
@@ -90,7 +100,8 @@ public class GameManager : MonoBehaviour
         {
             SpawnTime = Time.time + SpawnInterval;
             GameObject spawn = EnemySpawns[Random.Range(0, EnemySpawns.Length)]; //position 
-            Instantiate(Enemy, spawn.transform.position, spawn.transform.rotation);
+            GameObject enemy = Enemies[Random.Range(0, Enemies.Length)];
+            Instantiate(enemy, spawn.transform.position, spawn.transform.rotation);
         }
 
         yield return null;
