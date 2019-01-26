@@ -35,7 +35,9 @@ public class Weapon : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Destroy(this.gameObject);
+        if (collision.gameObject.tag != "Player" && collision.gameObject.tag != "Boundry")
+            Destroy(this.gameObject);
+
     }
 
     // Update is called once per frame

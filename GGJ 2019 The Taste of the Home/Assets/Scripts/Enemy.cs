@@ -25,6 +25,7 @@ public class Enemy : MonoBehaviour
         if(collision.gameObject.tag == "Player")
         {
             Destroy(this.gameObject);
+            GameManager.instance.ChangeScore(-points);
             collision.gameObject.GetComponent<Player>().Hurt(damage);
         }
     }

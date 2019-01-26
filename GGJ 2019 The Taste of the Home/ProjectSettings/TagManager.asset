@@ -8,6 +8,8 @@ TagManager:
   - player
   - enemy
   - Weapon
+  - Boundry
+  - EnemySpawn
   layers:
   - Default
   - TransparentFX

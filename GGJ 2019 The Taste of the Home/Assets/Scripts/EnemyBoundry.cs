@@ -2,19 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DestroyByBoundry : MonoBehaviour
+public class EnemyBoundry : MonoBehaviour
 {
 
     private void OnTriggerExit2D(Collider2D other) // when something leaves the game map it dies =(
     {
-        Debug.Log("Destroying");
-        Destroy(other.gameObject);
-    }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+        if (other.tag == "enemy")
+        {
+            GameManager.instance.ChangeScore(-other.gameObject.GetComponent<Enemy>().points);
+            Destroy(other.gameObject);
+        }
     }
 
     // Update is called once per frame

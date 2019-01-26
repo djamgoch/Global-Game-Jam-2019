@@ -10,10 +10,26 @@ public class GameManager : MonoBehaviour
 
     public int score = 0;
 
+    public Vector3 PlayerSpawnPosition;
+
+    public GameObject[] EnemySpawns;
+
+    public float SpawnInterval; //how long till the next spawn
+
+    [HideInInspector]
+    public float SpawnTime = 0f;
+
+    public GameObject Enemy;
 
     public Text Score; 
     [HideInInspector]
     public string scoreText = "Score : ";
+
+    public float GameTime; //how long the game lasts
+    [HideInInspector]
+    public float timeIncrement = 0f;
+
+    public Text Timer;
 
     private void Awake()
     {
@@ -31,6 +47,7 @@ public class GameManager : MonoBehaviour
 
     public void ChangeScore(int change) //could be a positive or negaitve change
     {
+        Debug.Log("Changing score by " + change);
         instance.score += change;
         ResetScoreText();
        
@@ -44,11 +61,39 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         ResetScoreText();
+        PlayerSpawnPosition = new Vector3(0.31f, -3.75f, 0f);
+        EnemySpawns = GameObject.FindGameObjectsWithTag("EnemySpawn");
+        Timer.text = GameTime.ToString();
     }
 
     void Update()
     {
-       
+        StartCoroutine("SpawnEnemies");
+        StartCoroutine("GameTimer");
+    }
+
+    public IEnumerator GameTimer()
+    {
+        if(timeIncrement <= Time.time)
+        {
+            timeIncrement = Time.time + 1f;
+            GameTime -= 1;
+            Timer.text = GameTime.ToString();
+        }
+        yield return null;
+    }
+
+
+    public IEnumerator SpawnEnemies()
+    {
+        if(SpawnTime <= Time.time)
+        {
+            SpawnTime = Time.time + SpawnInterval;
+            GameObject spawn = EnemySpawns[Random.Range(0, EnemySpawns.Length)]; //position 
+            Instantiate(Enemy, spawn.transform.position, spawn.transform.rotation);
+        }
+
+        yield return null;
     }
 }
 
