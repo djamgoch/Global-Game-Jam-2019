@@ -13,6 +13,9 @@ public class Player : MonoBehaviour
     public int horizontalSpeed;
     public int verticalSpeed;
 
+    private float goHorizontal = 0;
+    private float goVertical = 0;
+
     public int damage;
 
     public float cooldown;
@@ -20,8 +23,8 @@ public class Player : MonoBehaviour
     [HideInInspector]
     public float shootTime = 0.0f;
 
-    [HideInInspector]
-    public Vector3 inputVector = Vector3.zero;
+ //   [HideInInspector]
+ //   public Vector3 inputVector = Vector3.zero;
 
     public GameObject Knife; //this is basically the bullet
 
@@ -31,28 +34,30 @@ public class Player : MonoBehaviour
 
   public void PlayerInput()
     {
-        inputVector = Vector3.zero;
+ //       inputVector = Vector3.zero;
+        goHorizontal = 0;
+        goVertical = 0;
 
+        if (Input.GetKey("w") || Input.GetKey("up"))
+        {
+ //           inputVector += Vector3.up;
+            goVertical = 1;
+        }
+        else if (Input.GetKey("s") || Input.GetKey("down"))
+        {
+ //           inputVector += Vector3.down;
+            goVertical = -1;
+        }
+        if (Input.GetKey("a") || Input.GetKey("left"))
+        {
+ //           inputVector += Vector3.left;
+            goHorizontal = -1;
+        }
         
-        if(Input.GetKey("w") || Input.GetKey("up"))
+        else if (Input.GetKey("d") || Input.GetKey("right"))
         {
-            inputVector += Vector3.up;
-            speed = verticalSpeed;
-        }
-        if(Input.GetKey("a") || Input.GetKey("left"))
-        {
-            inputVector += Vector3.left;
-            speed = horizontalSpeed;
-        }
-        if (Input.GetKey("s") || Input.GetKey("down"))
-        {
-            inputVector += Vector3.down;
-            speed = verticalSpeed;
-        }
-        if (Input.GetKey("d") || Input.GetKey("right"))
-        {
-            inputVector += Vector3.right;
-            speed = horizontalSpeed;
+ //           inputVector += Vector3.right;
+            goHorizontal = 1;
         }
 
         if (Input.GetKey("space"))
@@ -75,7 +80,8 @@ public class Player : MonoBehaviour
 
     public void Move()
     {
-        transform.Translate(inputVector * Time.deltaTime * speed);
+        transform.Translate(Vector3.up * goVertical * Time.deltaTime * verticalSpeed);
+        transform.Translate(Vector3.right * goHorizontal * Time.deltaTime * horizontalSpeed);
     }
 
     void Start()
@@ -101,7 +107,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    void Update()
+    void FixedUpdate()
     {
         PlayerInput();
         Move();
