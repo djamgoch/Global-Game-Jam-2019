@@ -41,6 +41,8 @@ public class countDown : MonoBehaviour
             uiText.text = "8";}
             if( Mathf.Round(timer) == 9f){
             uiText.text ="9";}
+            if( Mathf.Round(timer) == 0f){
+            uiText.text ="0";}
             
         }
 //        else if (timer<=0.0f && !doOnce)

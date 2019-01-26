@@ -7,7 +7,11 @@ public class Player : MonoBehaviour
 
     public int health;
 
+    [HideInInspector]
     public int speed;
+
+    public int horizontalSpeed;
+    public int verticalSpeed;
 
     public int damage;
 
@@ -33,18 +37,22 @@ public class Player : MonoBehaviour
         if(Input.GetKey("w") || Input.GetKey("up"))
         {
             inputVector += Vector3.up;
+            speed = verticalSpeed;
         }
         if(Input.GetKey("a") || Input.GetKey("left"))
         {
             inputVector += Vector3.left;
+            speed = horizontalSpeed;
         }
         if (Input.GetKey("s") || Input.GetKey("down"))
         {
             inputVector += Vector3.down;
+            speed = verticalSpeed;
         }
         if (Input.GetKey("d") || Input.GetKey("right"))
         {
             inputVector += Vector3.right;
+            speed = horizontalSpeed;
         }
 
         if (Input.GetKey("space"))

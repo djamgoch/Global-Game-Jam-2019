@@ -8,12 +8,7 @@ public class GameManager : MonoBehaviour
 
     public static GameManager instance;
 
-    public int score = 0;
-
-
-    public Text Score; 
-    [HideInInspector]
-    public string scoreText = "Score : ";
+    public int TotalScore; 
 
     private void Awake()
     {
@@ -24,32 +19,25 @@ public class GameManager : MonoBehaviour
         }
         else if (instance != this)
             Destroy(gameObject);
+    }
 
+    public void Start()
+    {
+        
+    }
+
+    public void UpdateScore(int score)
+    {
+        TotalScore += score;
+        Debug.Log("At the end of the round the score is now " + TotalScore);
+    }
+
+    public void Update()
+    {
         
     }
 
 
-    public void ChangeScore(int change) //could be a positive or negaitve change
-    {
-        instance.score += change;
-        ResetScoreText();
-       
-    }
-
-    public void ResetScoreText()
-    {
-        instance.Score.text = (instance.scoreText + instance.score);
-    }
-
-    void Start()
-    {
-        ResetScoreText();
-    }
-
-    void Update()
-    {
-       
-    }
 }
 
 

@@ -8,7 +8,7 @@ public class Weapon : MonoBehaviour
     public int damage;
 
     public int speed;
-
+    public int spinSpeed;
 
     public float lifetime = 5f;
 
@@ -30,16 +30,20 @@ public class Weapon : MonoBehaviour
 
     public void Move()
     {
-        transform.Translate(direction * Time.deltaTime * speed);
+        transform.Translate(Vector3.up * Time.deltaTime * speed);
+        transform.Rotate(direction * spinSpeed);
+            //spinSpeed * Time.deltaTime);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Destroy(this.gameObject);
+        if (collision.gameObject.tag != "Player" && collision.gameObject.tag != "Boundry" && collision.gameObject.tag != "Weapon")
+            Destroy(this.gameObject);
+
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         Move();
     }
