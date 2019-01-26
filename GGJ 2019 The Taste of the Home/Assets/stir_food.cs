@@ -7,39 +7,75 @@ public class stir_food : MonoBehaviour
 {   
     private enum cookState
     {
+        raw,
         well_cooked,
-        medium_burned,
-        very_burned,
+        failed,
     };
     
+    //change difficulty 
+    private enum AgeState
+    {
+        young,
+        medium,
+        old,
+    };
+    
+    private SpriteRenderer m_SpriteRenderer;
     private cookState stateIndex; 
     public Text countdown;
-    private int Count;
+    public int Count;
     public countDown t;
     private float cooktime;
     private float elapsedTime;
     public bool getStired;
+    private Color newColor;
     // Start is called before the first frame update
     void Start()
     {
+        m_SpriteRenderer = GetComponent<SpriteRenderer>();
         
     }
 
     
     void Update()
     {
+    
+        switch ( stateIndex )
+            {
+                
+				case cookState.well_cooked:
+                    //newColor.r = Random 
+                    m_SpriteRenderer.color = new Color(0.8018868f,0.4971683f,0.2685564f,1f);
+                    
+                    break;
+                    
+                case cookState.failed:
+                    m_SpriteRenderer.color = new Color(0f,0f,0f,1f);
+                    Debug.Log("fail");
+                    break;
+            }
+        
         elapsedTime += Time.deltaTime;
         cooktime = Mathf.Round(elapsedTime);
         //after five seconeds without stiring, food will show count down 5,4,3...1.
         if ( cooktime == 5f){
             getStired=false;
-            //food change color
             t.timer = 10f;
             countdown.gameObject.SetActive(true);
-            if(t.timer ==0){
-                Debug.Log("burned!");
-            }
+            
+            
+            
+           
         }
+        
+        //fail
+         if(Mathf.Round(t.timer) <=0f){
+                stateIndex = cookState.failed;
+            }
+        //3 round stir 
+        if(Count >= 3){
+                stateIndex = cookState.well_cooked;
+            }
         
     }
     
@@ -48,11 +84,12 @@ public class stir_food : MonoBehaviour
     {   if(collision.tag == "scoop"){
             getStired=true;
             elapsedTime=0f;
-            //Debug.Log("TOUCHED");
-            t.timer= 0f;
+            t.timer= 10f;
             cooktime  = 0f;
             countdown.gameObject.SetActive(false);
              
+             Count +=1;
+            //TODO add sound and particle effect
             
         }
     
