@@ -10,7 +10,7 @@ public class EnemyBoundry : MonoBehaviour
 
         if (other.tag == "enemy")
         {
-            GameManager.instance.ChangeScore(-other.gameObject.GetComponent<Enemy>().points);
+            Food1942Manager.instance.ChangeScore(-other.gameObject.GetComponent<Enemy>().points);
             Destroy(other.gameObject);
         }
     }

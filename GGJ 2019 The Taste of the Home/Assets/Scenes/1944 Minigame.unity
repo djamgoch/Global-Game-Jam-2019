@@ -388,7 +388,7 @@ Transform:
   m_GameObject: {fileID: 556574213}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 1.9454274, y: -11.137194, z: -0.05295349}
-  m_LocalScale: {x: 20.69, y: 0.21012, z: 1}
+  m_LocalScale: {x: 30.4, y: 0.21012, z: 1}
   m_Children: []
   m_Father: {fileID: 1340235943}
   m_RootOrder: 0
@@ -422,6 +422,62 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1972288471}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &668378709
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 668378711}
+  - component: {fileID: 668378710}
+  m_Layer: 0
+  m_Name: Food1942Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &668378710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 668378709}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c675912c0d4b8374dad38c7f00600114, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  score: 0
+  PlayerSpawnPosition: {x: 0, y: 0, z: 0}
+  EnemySpawns: []
+  SpawnInterval: 1
+  SpawnTime: 0
+  Enemies:
+  - {fileID: 5081907186526272310, guid: 7d2205e97fb352549ae17416e6c642a6, type: 3}
+  - {fileID: 5371748781218072053, guid: e3ef63d24e760d34ba8b3d5756308805, type: 3}
+  Score: {fileID: 1542730801}
+  scoreText: 'Score : '
+  GameTime: 30
+  timeIncrement: 0
+  Timer: {fileID: 1562004087}
+--- !u!4 &668378711
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 668378709}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &867547798
 GameObject:
@@ -564,8 +620,8 @@ GameObject:
   - component: {fileID: 1008578328}
   - component: {fileID: 1008578327}
   - component: {fileID: 1008578326}
-  - component: {fileID: 1008578329}
   - component: {fileID: 1008578325}
+  - component: {fileID: 1008578329}
   m_Layer: 0
   m_Name: PlayerBoundry
   m_TagString: Boundry
@@ -667,7 +723,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1008578324}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 905ab7ba8b293294ca3d14c1ddfbe90f, type: 3}
+  m_Script: {fileID: 11500000, guid: 07cdd9b9b09314d469fb37fd67b2440e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1340235942

@@ -25,7 +25,7 @@ public class Enemy : MonoBehaviour
         if(collision.gameObject.tag == "Player")
         {
             Destroy(this.gameObject);
-            GameManager.instance.ChangeScore(-points);
+            Food1942Manager.instance.ChangeScore(-points);
             collision.gameObject.GetComponent<Player>().Hurt(damage);
         }
     }
@@ -47,7 +47,7 @@ public class Enemy : MonoBehaviour
     {
         if(health <= 0)
         {
-            GameManager.instance.ChangeScore(points); //when the enemies die the player score increases
+            Food1942Manager.instance.ChangeScore(points); //when the enemies die the player score increases
             Destroy(this.gameObject);
         }
     }

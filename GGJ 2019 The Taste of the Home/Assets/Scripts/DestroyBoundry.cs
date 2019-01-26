@@ -8,9 +8,10 @@ public class DestroyBoundry : MonoBehaviour
     private void OnTriggerExit2D(Collider2D other) // when something leaves the game map it dies =(
     {
 
-        if (other.tag == "player")
+        if (other.tag == "Player")
         {
-            other.transform.position = GameManager.instance.PlayerSpawnPosition;   
+            other.gameObject.transform.position = Food1942Manager.instance.PlayerSpawnPosition;  
+            
         }
         else
         {
