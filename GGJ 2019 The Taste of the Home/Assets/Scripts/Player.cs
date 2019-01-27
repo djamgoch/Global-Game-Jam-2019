@@ -92,6 +92,11 @@ public class Player : MonoBehaviour
         yield return null;
     }
 
+    public void IncreaseDamageMultiplier(int val)
+    {
+        damageMultiplier = val;
+    }
+
     public void Move()
     {  
         if(powerup){
