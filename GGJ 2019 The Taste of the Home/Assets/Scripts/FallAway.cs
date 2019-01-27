@@ -56,7 +56,6 @@ public class FallAway : MonoBehaviour
             float difference = 0.02f;
             transform.localScale = new Vector3( transform.localScale.x - difference, transform.localScale.y - difference, transform.localScale.z - difference);
             float rot = Time.deltaTime * RotationSpeed;
-            Debug.Log("Rot is " + rot);
             transform.rotation = Quaternion.Euler(new Vector3(0f,0f, transform.rotation.z - rot));
         }
 
