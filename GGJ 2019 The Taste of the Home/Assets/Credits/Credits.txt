@@ -1,7 +1,10 @@
 Made by:
-
-
+David Jamgochian
+Diego Guzman
+Nikhil Sharman
 Ben Gibson
+Jon Apostol
+Yian Li
 
 
 We are using:
