@@ -150,11 +150,14 @@ public class Food1942Manager : MonoBehaviour
             SpawnTime = Time.time + SpawnInterval;
 
             int num = (int)(randomNumber());
-            GameObject spawn = EnemySpawns[num];
+            //GameObject spawn = EnemySpawns[num];
             GameObject enemy = Enemies[num];
-           // GameObject spawn = EnemySpawns[Random.Range(0, EnemySpawns.Length)]; //position 
-           // GameObject enemy = Enemies[Random.Range(0, Enemies.Length)];
-            Instantiate(enemy, spawn.transform.position, spawn.transform.rotation);
+            GameObject spawn = EnemySpawns[Random.Range(0, EnemySpawns.Length)]; //position 
+            // GameObject enemy = Enemies[Random.Range(0, Enemies.Length)];
+
+            float offset = Random.RandomRange(-1, 1);
+            Vector3 spawnP = new Vector3(spawn.transform.position.x + offset, spawn.transform.position.y, spawn.transform.position.z);
+            Instantiate(enemy, spawnP, spawn.transform.rotation);
         }
 
         yield return null;
