@@ -23,16 +23,12 @@ public class Food1942Manager : MonoBehaviour
     //public GameObject Enemy;
 
     public Text Score;
-    [HideInInspector]
-    public string scoreText = "Score : ";
 
     public float GameTime; //how long the game lasts
     [HideInInspector]
     public float timeIncrement = 0f;
 
     public Text Timer;
-
-
 
     private void Awake()
     {
@@ -57,7 +53,7 @@ public class Food1942Manager : MonoBehaviour
 
     public void ResetScoreText()
     {
-        instance.Score.text = (instance.scoreText + instance.score);
+        instance.Score.text = "Score "+ instance.score;
     }
 
     void Start()

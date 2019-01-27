@@ -1,0 +1,5 @@
+
+We are using:
+
+RPGTalk- http://www.seizestudios.com/developer/rpgtalk/
+Oswald Font- https://github.com/googlefonts/OswaldFont

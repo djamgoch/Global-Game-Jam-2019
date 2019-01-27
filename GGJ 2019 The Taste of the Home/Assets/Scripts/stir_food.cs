@@ -51,7 +51,7 @@ public class stir_food : MonoBehaviour
                     
                 case cookState.failed:
                     m_SpriteRenderer.color = new Color(0f,0f,0f,1f);
-                    Debug.Log("fail");
+                    
                     break;
             }
         

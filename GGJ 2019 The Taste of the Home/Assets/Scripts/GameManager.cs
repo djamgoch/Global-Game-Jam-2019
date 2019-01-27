@@ -33,7 +33,6 @@ public class GameManager : MonoBehaviour
         {
             audioManager = Instantiate(AudioManagerPrefab).GetComponent<AudioManager>();
             audioManager.gameObject.name = "AudioManager"; //I don't like it being named "Clone"
-            Debug.Log("Making audimanager");
             DontDestroyOnLoad(audioManager);
             //if (scene.name == mainMenuSceneName)
             //    GameManager.instance.audioManager.Play("Main Menu");
