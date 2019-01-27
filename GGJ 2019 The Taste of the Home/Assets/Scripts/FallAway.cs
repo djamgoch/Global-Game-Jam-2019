@@ -20,7 +20,7 @@ public class FallAway : MonoBehaviour
     public float lifeeeee = 0f;
 
     [HideInInspector]
-    public float RotationSpeed = 1000f;
+    public float RotationSpeed = 100f;
 
     [HideInInspector]
     Rigidbody2D rb;
@@ -52,7 +52,12 @@ public class FallAway : MonoBehaviour
 
             rb.velocity = (movementDirection * Time.deltaTime * speed);
             //transform.Translate(movementDirection * Time.deltaTime * speed);
-            rb.rotation += Time.deltaTime * RotationSpeed;
+
+            float difference = 0.02f;
+            transform.localScale = new Vector3( transform.localScale.x - difference, transform.localScale.y - difference, transform.localScale.z - difference);
+            float rot = Time.deltaTime * RotationSpeed;
+            Debug.Log("Rot is " + rot);
+            transform.rotation = Quaternion.Euler(new Vector3(0f,0f, transform.rotation.z - rot));
         }
 
         

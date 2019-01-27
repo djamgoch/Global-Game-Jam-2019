@@ -65,7 +65,7 @@ public class Enemy : MonoBehaviour
             this.gameObject.tag = "Dead";
             //col.enabled = false;
            
-            Destroy(this.gameObject, 1f);
+            Destroy(this.gameObject, 0.75f);
 
             //Destroy(this.gameObject);
         }
