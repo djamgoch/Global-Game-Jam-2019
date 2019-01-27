@@ -8,8 +8,12 @@ public class MainMenu : MonoBehaviour
 
     public string firstSceneName;
 
+    public string SongToStop;
+
     public void StartGame()
     {
+        if(SongToStop != "")
+            GameManager.instance.audioManager.Stop(SongToStop);
         SceneManager.LoadScene(firstSceneName);
     }
 

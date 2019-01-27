@@ -28,6 +28,7 @@ public class HubRoomManager : MonoBehaviour
 
     public void NextScene()
     {
+        GameManager.instance.audioManager.Stop("Home");
         SceneManager.LoadScene(SHMUPSCENE);
     }
     // Start is called before the first frame update

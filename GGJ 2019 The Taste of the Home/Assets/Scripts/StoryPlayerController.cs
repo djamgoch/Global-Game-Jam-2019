@@ -78,6 +78,6 @@ public class StoryPlayerController : MonoBehaviour
         //transform.rotation = Quaternion.Euler(new Vector3(-90, transform.rotation.y, transform.rotation.z));
         rb.velocity = movement;
 
-        Debug.Log("Velocity is " + rb.velocity);
+        //Debug.Log("Velocity is " + rb.velocity);
     }
 }

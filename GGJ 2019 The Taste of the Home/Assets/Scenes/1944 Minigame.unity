@@ -233,7 +233,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &290380956
 RectTransform:
   m_ObjectHideFlags: 0
@@ -743,6 +743,7 @@ MonoBehaviour:
   WinPanel: {fileID: 290380955}
   WinText: {fileID: 1442741695}
   WinTotalScore: {fileID: 1309364107}
+  camShaker: {fileID: 1500447786}
 --- !u!4 &668378711
 Transform:
   m_ObjectHideFlags: 0
@@ -873,6 +874,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firstSceneName: HubRoom
+  SongToStop: SHMUP
 --- !u!1 &954060092
 GameObject:
   m_ObjectHideFlags: 0
@@ -1395,6 +1397,7 @@ GameObject:
   - component: {fileID: 1500447785}
   - component: {fileID: 1500447784}
   - component: {fileID: 1500447783}
+  - component: {fileID: 1500447786}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1466,6 +1469,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1500447786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1500447782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6157615075cf9b45809080ab3a87c36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  camTransform: {fileID: 0}
+  shakeDuration: 0
+  shakeAmount: 0.2
+  decreaseFactor: 2
 --- !u!1 &1542730799
 GameObject:
   m_ObjectHideFlags: 0
@@ -1807,7 +1826,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.31749922, y: 0.18}
   m_AnchorMax: {x: 0.71750087, y: 0.25750628}
-  m_AnchoredPosition: {x: -2, y: -2.2999725}
+  m_AnchoredPosition: {x: -2, y: -2.2999802}
   m_SizeDelta: {x: 0, y: -1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1971045389

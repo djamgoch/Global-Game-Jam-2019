@@ -34,6 +34,7 @@ public class Food1942Manager : MonoBehaviour
     public GameObject WinPanel;
     public Text WinText;
     public Text WinTotalScore;
+    public CameraShake camShaker;
 
 
     private void Awake()
@@ -81,6 +82,11 @@ public class Food1942Manager : MonoBehaviour
             StartCoroutine("GameTimer");
         }
 
+    }
+
+    public void EnemyDeathCameraShake()
+    {
+        camShaker.shakeDuration = 0.1f;        
     }
 
     public IEnumerator GameTimer()

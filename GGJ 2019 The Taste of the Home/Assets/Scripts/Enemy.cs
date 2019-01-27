@@ -65,7 +65,7 @@ public class Enemy : MonoBehaviour
             this.gameObject.tag = "Dead";
             //col.enabled = false;
             GameManager.instance.audioManager.Play("Death");
-
+            Food1942Manager.instance.EnemyDeathCameraShake();
             Destroy(this.gameObject, 0.35f);
 
             //Destroy(this.gameObject);
