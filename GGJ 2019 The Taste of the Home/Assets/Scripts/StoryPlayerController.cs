@@ -4,9 +4,19 @@ using UnityEngine;
 
 public class StoryPlayerController : MonoBehaviour
 {
-    public float moveSpeed = 3.0f;
+    public float moveSpeed = 30f;
 
     private Rigidbody rb;
+
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.tag == "Respawn")
+        {
+            HubRoomManager.instance.NextScene();
+        }
+    }
+
 
     // Start is called before the first frame update
     void Start()
@@ -43,6 +53,8 @@ public class StoryPlayerController : MonoBehaviour
     }
 
     void FixedUpdate() {
+
+        rb.velocity = Vector3.zero;
         Vector3 direction = Vector3.zero;
         if (Input.GetKey(KeyCode.W)) {
             direction += Vector3.forward;
@@ -61,9 +73,11 @@ public class StoryPlayerController : MonoBehaviour
             transform.rotation = Quaternion.Euler(new Vector3(-90f, 90f, 0f));
         }
 
-        Vector3 movement = direction.normalized * moveSpeed;
+        Vector3 movement = direction.normalized * moveSpeed * Time.deltaTime;
         //transform.LookAt(transform.position + movement);
         //transform.rotation = Quaternion.Euler(new Vector3(-90, transform.rotation.y, transform.rotation.z));
         rb.velocity = movement;
+
+        Debug.Log("Velocity is " + rb.velocity);
     }
 }

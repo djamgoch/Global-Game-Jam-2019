@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/1944 Minigame.unity
     guid: ca51d7242d130314182f982d932f7258
+  - enabled: 1
+    path: Assets/Scenes/HubRoom.unity
+    guid: e9ec08b7802adb446bc3fad0709cc045
   m_configObjects: {}

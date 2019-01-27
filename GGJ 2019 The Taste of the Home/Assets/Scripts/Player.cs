@@ -76,6 +76,7 @@ public class Player : MonoBehaviour
         if(shootTime <= Time.time)
         {
             shootTime = Time.time + cooldown;
+            GameManager.instance.audioManager.Play("Knife");
             Weapon ShotWeapon = Instantiate(Knife, ShootPoint.transform.position, ShootPoint.transform.rotation).GetComponent<Weapon>();
             ShotWeapon.damage = ShotWeapon.damage * damageMultiplier;
         }

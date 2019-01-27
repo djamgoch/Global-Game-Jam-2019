@@ -64,6 +64,8 @@ public class Food1942Manager : MonoBehaviour
         PlayerSpawnPosition = new Vector3(0.31f, -3.75f, 0f);
         EnemySpawns = GameObject.FindGameObjectsWithTag("EnemySpawn");
         Timer.text = GameTime.ToString();
+        GameManager.instance.audioManager.Play("SHMUP");
+      
     }
 
     void FixedUpdate()

@@ -43,6 +43,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f400c6b37bdb4b7428bd13798f68c0b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sounds: []
+  sounds:
+  - clip: {fileID: 8300000, guid: 64ff9102b087e534992a0b4d13a4312a, type: 3}
+    name: Home
+    volume: 0.3
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    output: {fileID: 0}
+  - clip: {fileID: 8300000, guid: 58e556f9c2bf08640a517749f561cc48, type: 3}
+    name: SHMUP
+    volume: 0.384
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    output: {fileID: 0}
+  - clip: {fileID: 8300000, guid: d8c6bdf7bb503d0458fa0f69a6da5207, type: 3}
+    name: Knife
+    volume: 0.237
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    output: {fileID: 0}
   audioMixer: {fileID: 0}
   muted: 0
