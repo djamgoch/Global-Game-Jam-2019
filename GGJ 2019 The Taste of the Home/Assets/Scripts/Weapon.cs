@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
-
     public int damage;
 
     public int speed;
     public int spinSpeed;
 
     public float lifetime = 5f;
+    private Rigidbody2D RB;
 
     [HideInInspector]
     public Vector3 direction = Vector3.up;
@@ -19,6 +19,7 @@ public class Weapon : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        RB = gameObject.GetComponent<Rigidbody2D>();
        // StartCoroutine("Lifetime");
     }
 
@@ -30,8 +31,8 @@ public class Weapon : MonoBehaviour
 
     public void Move()
     {
-        transform.Translate(Vector3.up * Time.deltaTime * speed);
-        transform.Rotate(direction * spinSpeed);
+        RB.velocity = (Vector3.up * Time.deltaTime * speed);
+        
             //spinSpeed * Time.deltaTime);
     }
 
@@ -46,5 +47,6 @@ public class Weapon : MonoBehaviour
     void FixedUpdate()
     {
         Move();
+        RB.rotation += Time.deltaTime * spinSpeed;
     }
 }

@@ -95,9 +95,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 10
-  speed: 20
-  spinSpeed: 25
+  speed: 1000
+  spinSpeed: 1000
   lifetime: 5
+  RB: {fileID: 0}
   direction: {x: 0, y: 1, z: 0}
 --- !u!61 &5871192988053846300
 BoxCollider2D:
