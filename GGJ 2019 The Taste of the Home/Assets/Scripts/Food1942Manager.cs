@@ -31,6 +31,9 @@ public class Food1942Manager : MonoBehaviour
 
     public Text Timer;
 
+    public GameObject WinPanel;
+    public Text WinText;
+    public Text WinTotalScore;
 
 
     private void Awake()
@@ -66,6 +69,7 @@ public class Food1942Manager : MonoBehaviour
         EnemySpawns = GameObject.FindGameObjectsWithTag("EnemySpawn");
         Timer.text = GameTime.ToString();
         GameManager.instance.audioManager.Play("SHMUP");
+        WinPanel.SetActive(false);
       
     }
 
@@ -93,6 +97,20 @@ public class Food1942Manager : MonoBehaviour
         {
             GameManager.instance.UpdateScore(score);
             Debug.Log("Game is over! Well this minigame at least");
+            WinPanel.SetActive(true);
+            WinText.text = "Score : " + score;
+            WinTotalScore.text = "Total Score : " + GameManager.instance.TotalScore;
+
+            Enemy[] killEnemy = FindObjectsOfType<Enemy>();
+
+            for(int i = 0; i < killEnemy.Length; i++)
+            {
+                Destroy(killEnemy[i].gameObject);
+            }
+
+
+            Destroy(FindObjectOfType<Player>().gameObject);
+
         }
         yield return null;
     }
