@@ -28,7 +28,7 @@ public class note_object : MonoBehaviour
     }
     
     private void OnTriggerEnter(Collider other){
-        Debug.Log("ss");
+        
         if(other.tag =="button"){
             canBePressed = true;
         }
