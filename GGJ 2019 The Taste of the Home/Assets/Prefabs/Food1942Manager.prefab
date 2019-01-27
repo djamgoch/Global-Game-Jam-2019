@@ -46,16 +46,18 @@ MonoBehaviour:
   score: 0
   PlayerSpawnPosition: {x: 0, y: 0, z: 0}
   EnemySpawns: []
-  SpawnInterval: 1
+  SpawnInterval: 0.7
   SpawnTime: 0
   Enemies:
   - {fileID: 5081907186526272310, guid: 7d2205e97fb352549ae17416e6c642a6, type: 3}
   - {fileID: 5371748781218072053, guid: e3ef63d24e760d34ba8b3d5756308805, type: 3}
   - {fileID: 4481238166427978282, guid: ccdb2d0a77091a14b8b0f8ebee7ce2a5, type: 3}
+  - {fileID: 6628097917358424275, guid: 35d54cc2229bb6d4eb266bc3dafb2639, type: 3}
   SpawnPercentages:
-  - 0.5
-  - 0.25
-  - 0.25
+  - 0.2
+  - 0.6
+  - 0.15
+  - 0.05
   Score: {fileID: 0}
   GameTime: 30
   timeIncrement: 0
