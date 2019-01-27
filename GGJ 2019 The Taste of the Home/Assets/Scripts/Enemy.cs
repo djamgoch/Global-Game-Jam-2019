@@ -14,10 +14,21 @@ public class Enemy : MonoBehaviour
 
     public int points; //how much the enemy is worth when killed
 
+    public bool alive = true;
+
+    [HideInInspector]
+    public FallAway Left;
+    [HideInInspector]
+    public FallAway Right;
+
+    private BoxCollider2D col;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        col = GetComponent<BoxCollider2D>();
+        Left = transform.Find("left").gameObject.GetComponent<FallAway>();
+        Right = transform.Find("right").gameObject.GetComponent<FallAway>();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -32,12 +43,9 @@ public class Enemy : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        //Debug.Log("Colliding with " + collision.tag);
-        if (collision.gameObject.tag == "Weapon")
+        if (collision.gameObject.tag == "Weapon" && alive)
         {
-            //Debug.Log("????");
             Hurt(collision.gameObject.GetComponent<Weapon>().damage);
-            //Debug.Log("What is the health " + health);
         }
     }
 
@@ -51,7 +59,15 @@ public class Enemy : MonoBehaviour
         if(health <= 0)
         {
             Food1942Manager.instance.ChangeScore(points); //when the enemies die the player score increases
-            Destroy(this.gameObject);
+            alive = false;
+            Left.Activate();
+            Right.Activate();
+            this.gameObject.tag = "Dead";
+            //col.enabled = false;
+           
+            Destroy(this.gameObject, 1f);
+
+            //Destroy(this.gameObject);
         }
     }
 
@@ -63,7 +79,11 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Move();
-        CheckDeath();
+        if(alive)
+        {
+            Move();
+            CheckDeath();
+        }
+
     }
 }
