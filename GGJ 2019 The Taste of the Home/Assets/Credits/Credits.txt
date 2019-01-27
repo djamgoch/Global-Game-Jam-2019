@@ -11,3 +11,9 @@ We are using:
 
 RPGTalk- http://www.seizestudios.com/developer/rpgtalk/
 Oswald Font- https://github.com/googlefonts/OswaldFont
+Knife Sound Effect - https://opengameart.org/content/knife-sharpening-slice-1
+Weapon Sprites - https://opengameart.org/content/pixel-weapons1
+Hand Sprite - https://opengameart.org/content/cursor
+Food Sprites - https://opengameart.org/content/food-icons
+Sound Effects - https://freesound.org/
+Screen Shake Code - https://gist.github.com/ftvs/5822103
