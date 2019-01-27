@@ -39,6 +39,7 @@ public class CollisionController : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Return)) {
                 // finish/initiate talking on couch
                 if (uiText.gameObject.name.Equals("Couch text")) {
+                    storyManager.SelectActivity(2);
                     GameManager.instance.stateMachine.UpdateState();
                 }
                 // initiate cooking

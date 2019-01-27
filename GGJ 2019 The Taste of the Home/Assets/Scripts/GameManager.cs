@@ -16,8 +16,26 @@ public class GameManager : MonoBehaviour
 
     public string LastMinigameSceneForCooking = "fry pan";
 
+    public string storyHubSceneName = "Story scene";
+
+    public string firstStoryTextStartLine = "1";
+    public string firstStoryTextEndLine = "3";
+
+    public string secondStoryTextStartLine = "5";
+    public string secondStoryTextEndLine = "7";
+
+    public string thirdStoryTextStartLine = "9";
+    public string thirdStoryTextEndLine = "11"; 
+
+    [HideInInspector] 
+    public string currentStoryTextStartLine = "1";
+    [HideInInspector]
+    public string currentStoryTextEndLine = "3";
+
     [HideInInspector]
     public StateMachine stateMachine { get; private set; }
+
+    private int storyHubCounter = 0;
 
     private void Awake()
     {
@@ -74,9 +92,29 @@ public class GameManager : MonoBehaviour
         instance.audioManager.SetSoundEffectVolume(volume);
     }
 
+    // public UpdateTextProgress()
+
     void OnSceneLoaded(Scene scene, LoadSceneMode mode) {
         if (scene.name == LastMinigameSceneForCooking) {
-            stateMachine.UpdateState(State.CookedFood);
+            // stateMachine.UpdateState(State.CookedFood);
+        }
+
+        if (scene.name == storyHubSceneName) {
+            storyHubCounter++;
+            if (storyHubCounter <= 1) {
+                currentStoryTextStartLine = firstStoryTextStartLine;
+                currentStoryTextEndLine = firstStoryTextEndLine;
+                stateMachine.UpdateState(State.Beginning);
+            }
+            else if (storyHubCounter == 2) {
+                currentStoryTextStartLine = secondStoryTextStartLine;
+                currentStoryTextEndLine = secondStoryTextEndLine;
+                stateMachine.UpdateState(State.CookedFood);
+            }
+            else if (storyHubCounter == 3) {
+                currentStoryTextStartLine = thirdStoryTextStartLine;
+                currentStoryTextEndLine = thirdStoryTextEndLine;
+            }
         }
     }
 

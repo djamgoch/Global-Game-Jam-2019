@@ -1,9 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using RPGTALK;
 
 public class StoryManager : MonoBehaviour
 {
+    [Header("To get story manager working properly, you need to use the triggercube prefabs. Or Just follow the structure in Story scene")]
     public GameObject player;
 
     public Vector3 beginningPosition;
@@ -12,6 +14,9 @@ public class StoryManager : MonoBehaviour
     public Vector3 endPosition;
 
     public Canvas[] canvases;
+
+    public Canvas dialogueCanvas;
+    public RPGTalk dialogueController;
 
     public string firstCookingSceneName;
 
@@ -40,6 +45,10 @@ public class StoryManager : MonoBehaviour
                 Debug.Log("used a value out of range.");
                 break;
         }
+        Debug.Log(GameManager.instance.currentStoryTextStartLine + ", " + GameManager.instance.currentStoryTextEndLine);
+        dialogueController.NewTalk(GameManager.instance.currentStoryTextStartLine, GameManager.instance.currentStoryTextEndLine, dialogueController.txtToParse, this, "DisableDialogueCanvas");
+
+        dialogueCanvas.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -72,6 +81,7 @@ public class StoryManager : MonoBehaviour
                 break;
             case 2:
                 Debug.Log("Player selecting talking to family member.");
+                dialogueCanvas.gameObject.SetActive(true);
                 break;
             default:
                 Debug.Log("Error. No correct option selected!");
@@ -82,6 +92,9 @@ public class StoryManager : MonoBehaviour
     public void UpdateProgress() {
         switch ((int) GameManager.instance.stateMachine.state) {
             case (int) GameManager.State.Beginning:
+                ActivateCanvas(0);
+                break;
+            case (int) GameManager.State.CookedFood:
                 ActivateCanvas(0);
                 break;
             case (int) GameManager.State.TalkedToPersonOnCouch:
@@ -96,5 +109,9 @@ public class StoryManager : MonoBehaviour
                 Debug.Log("used a value out of range.");
                 break;
         }
+    }
+
+    public void DisableDialogueCanvas() {
+        dialogueCanvas.gameObject.SetActive(false);
     }
 }
