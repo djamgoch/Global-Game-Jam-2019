@@ -4,12 +4,37 @@ using UnityEngine;
 
 public class PlayerAnimation : MonoBehaviour
 {
-    public float timeBlinking = .15f;
-    public float timeExpression = .2f;
+    public float timeBlinking = .1f;
+    public float timeExpression = .5f;
     // 0 = normal, 1 = blinking, 2 = happy
     // 3 = annoyed, 4 = sad, 5 = hit
     public GameObject[] playerFaces;
-    private bool goDo = true;
+    public bool isMoving = false;
+    private float timeMoving = 0f;
+
+    private bool idleAnimActive = false;
+    private System.Random blinkRNG = new System.Random();
+    private int timeTilBlink = 0;
+
+    // Unity Methods
+    void Update()
+    {
+        if (isMoving)
+        {
+            timeMoving += Time.deltaTime;
+            transform.position += new Vector3(0f, Mathf.Cos((timeMoving * 5) % Mathf.PI) * 1f * Time.deltaTime, 0f);
+        }
+        if (!isMoving)
+        {
+            if (!idleAnimActive)
+            {
+                idleAnimActive = true;
+                doBlinkAnim();
+                timeTilBlink = blinkRNG.Next(1, 11);
+                Invoke("setBlinkFlag", (float)timeTilBlink);
+            }
+        }
+    }
 
     // Private Methods
     private IEnumerator doExpression(int i, float runtime)
@@ -21,7 +46,17 @@ public class PlayerAnimation : MonoBehaviour
         playerFaces[i].SetActive(false);
     }
 
+    private void setBlinkFlag()
+    {
+        idleAnimActive = false;
+    }
+
     // Public Methods
+    public void setMovingFlag(bool value)
+    {
+        isMoving = value;
+        timeMoving = 0f;
+    }
     public void doBlinkAnim()
     {
         StartCoroutine(doExpression(1, timeBlinking));
