@@ -15,14 +15,15 @@ TextureImporter:
     21300020: veggies_10
     21300022: veggies_11
     21300024: veggies_12
-    21300026: veggies_13
+    21300026: OnionLeftHalf
     21300028: veggies_14
-    21300030: veggies_15
+    21300030: MushroomLeftHalf
     21300032: veggies_16
     21300034: veggies_17
     21300036: veggies_18
     21300038: veggies_19
-    21300040: veggies_20
+    21300040: MushroomRightHalf
+    21300042: OnionRightHalf
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -376,12 +377,12 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: veggies_13
+      name: OnionLeftHalf
       rect:
         serializedVersion: 2
         x: 144
         y: 132
-        width: 92
+        width: 46
         height: 112
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -416,7 +417,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: veggies_15
+      name: MushroomLeftHalf
       rect:
         serializedVersion: 2
         x: 404
@@ -516,7 +517,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: veggies_20
+      name: MushroomRightHalf
       rect:
         serializedVersion: 2
         x: 450
@@ -531,6 +532,26 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 34e3e98b16dda23419eca733e640c3fc
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OnionRightHalf
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 132
+        width: 46
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fca19737037e39349aaa5b542b44321b
       vertices: []
       indices: 
       edges: []
