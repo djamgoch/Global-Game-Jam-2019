@@ -3,7 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - EnemySpawn
+  - Boundry
+  - enemy
+  - Weapon
+  - scoop
+  - button
   layers:
   - Default
   - TransparentFX
