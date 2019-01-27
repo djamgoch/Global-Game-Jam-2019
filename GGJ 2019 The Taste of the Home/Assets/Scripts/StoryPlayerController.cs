@@ -82,13 +82,9 @@ public class StoryPlayerController : MonoBehaviour
 
         Vector3 movement = direction.normalized * moveSpeed * Time.deltaTime;
 
-
         if (movement.magnitude > 0f)  { pa.setMovingFlag(true); }
         else { pa.setMovingFlag(false); }
-        
-        
-        //transform.LookAt(transform.position + movement);
-        //transform.rotation = Quaternion.Euler(new Vector3(-90, transform.rotation.y, transform.rotation.z));
+
         rb.velocity = movement;
 
         //Debug.Log("Velocity is " + rb.velocity);

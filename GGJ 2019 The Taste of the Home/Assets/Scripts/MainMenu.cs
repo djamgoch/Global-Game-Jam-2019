@@ -10,6 +10,11 @@ public class MainMenu : MonoBehaviour
 
     public string SongToStop;
 
+    public bool shouldIplayasong;
+
+    public string songtoPlay;
+
+
     public void StartGame()
     {
         if(SongToStop != "")
@@ -24,7 +29,8 @@ public class MainMenu : MonoBehaviour
 
     void Start()
     {
-        
+        if (shouldIplayasong)
+            GameManager.instance.audioManager.Play(songtoPlay);
     }
 
     // Update is called once per frame
