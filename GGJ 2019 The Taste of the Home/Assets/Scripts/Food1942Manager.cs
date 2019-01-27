@@ -64,7 +64,7 @@ public class Food1942Manager : MonoBehaviour
         Timer.text = GameTime.ToString();
     }
 
-    void Update()
+    void FixedUpdate()
     {
         if (GameTime > 0)
         {
@@ -78,9 +78,10 @@ public class Food1942Manager : MonoBehaviour
     {
         if (timeIncrement <= Time.time)
         {
-            timeIncrement = Time.time + 1f;
-            GameTime -= 1;
-            Timer.text = GameTime.ToString();
+            timeIncrement = Time.time + 0.01f;
+            GameTime -= 0.01f;
+            float DisplayTime = (float)System.Math.Round(GameTime * 100f) / 100f;
+            Timer.text = DisplayTime.ToString();
         }
 
         if (GameTime <= 0)
