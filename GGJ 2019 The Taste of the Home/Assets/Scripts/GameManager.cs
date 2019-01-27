@@ -51,6 +51,10 @@ public class GameManager : MonoBehaviour
         Debug.Log("At the end of the round the score is now " + TotalScore);
     }
 
+    public void LoadScene(string sceneName) {
+        SceneManager.LoadScene(sceneName);
+    }
+
     public void Mute()
     {
         instance.audioManager.Mute();

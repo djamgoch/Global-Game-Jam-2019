@@ -12,6 +12,11 @@ public class StoryManager : MonoBehaviour
     public Vector3 endPosition;
 
     public Canvas[] canvases;
+
+    public string firstCookingSceneName;
+
+    public GameObject[] triggerCubes;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -45,10 +50,14 @@ public class StoryManager : MonoBehaviour
 
     void ActivateCanvas(int c) {
         for (int i = 0; i < canvases.Length; i++) {
-            if (i == c) 
+            if (i == c) {
                 canvases[i].gameObject.SetActive(true);
-            else
+                triggerCubes[i].SetActive(true);
+            }
+            else {
                 canvases[i].gameObject.SetActive(false);
+                triggerCubes[i].SetActive(false);
+            }
         }
     }
 
@@ -56,6 +65,7 @@ public class StoryManager : MonoBehaviour
         switch (activity) {
             case 0:
                 Debug.Log("Player selected cooking.");
+                GameManager.instance.LoadScene(firstCookingSceneName);
                 break;
             case 1:
                 Debug.Log("Player selected sleeping.");
