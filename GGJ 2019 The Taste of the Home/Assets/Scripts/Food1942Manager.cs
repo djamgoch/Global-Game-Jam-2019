@@ -20,6 +20,7 @@ public class Food1942Manager : MonoBehaviour
 
 
     public GameObject[] Enemies;
+    public float[] SpawnPercentages;
     //public GameObject Enemy;
 
     public Text Score;
@@ -82,8 +83,8 @@ public class Food1942Manager : MonoBehaviour
     {
         if (timeIncrement <= Time.time)
         {
-            timeIncrement = Time.time + 0.01f;
-            GameTime -= 0.01f;
+            timeIncrement = Time.time + 0.1f;
+            GameTime -= 0.1f;
             float DisplayTime = (float)System.Math.Round(GameTime * 100f) / 100f;
             Timer.text = DisplayTime.ToString();
         }
@@ -97,13 +98,38 @@ public class Food1942Manager : MonoBehaviour
     }
 
 
+
+    public float randomNumber()
+    {
+        float ran = Random.Range(0f, 1f);
+        float sum = 0f;
+        //Debug.Log("ran is " + ran);
+        for(int i = 0; i < SpawnPercentages.Length;i++)
+        {
+            float num = SpawnPercentages[i];
+            if(ran > sum && ran < (sum + num) )
+            {
+                //Debug.Log("Found when sum is " + sum + " and num is " + num);
+                return i;
+            }
+            sum += num;
+        }
+
+        return -1f;
+
+    }
+
     public IEnumerator SpawnEnemies()
     {
         if (SpawnTime <= Time.time)
         {
             SpawnTime = Time.time + SpawnInterval;
-            GameObject spawn = EnemySpawns[Random.Range(0, EnemySpawns.Length)]; //position 
-            GameObject enemy = Enemies[Random.Range(0, Enemies.Length)];
+
+            int num = (int)(randomNumber());
+            GameObject spawn = EnemySpawns[num];
+            GameObject enemy = Enemies[num];
+           // GameObject spawn = EnemySpawns[Random.Range(0, EnemySpawns.Length)]; //position 
+           // GameObject enemy = Enemies[Random.Range(0, Enemies.Length)];
             Instantiate(enemy, spawn.transform.position, spawn.transform.rotation);
         }
 

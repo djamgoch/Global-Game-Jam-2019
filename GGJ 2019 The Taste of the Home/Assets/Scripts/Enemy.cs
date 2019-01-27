@@ -64,8 +64,9 @@ public class Enemy : MonoBehaviour
             Right.Activate();
             this.gameObject.tag = "Dead";
             //col.enabled = false;
-           
-            Destroy(this.gameObject, 0.75f);
+            GameManager.instance.audioManager.Play("Death");
+
+            Destroy(this.gameObject, 0.35f);
 
             //Destroy(this.gameObject);
         }

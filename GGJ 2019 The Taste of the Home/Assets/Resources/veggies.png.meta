@@ -21,9 +21,10 @@ TextureImporter:
     21300032: veggies_16
     21300034: veggies_17
     21300036: veggies_18
-    21300038: veggies_19
+    21300038: lobster1
     21300040: MushroomRightHalf
     21300042: OnionRightHalf
+    21300044: lobster2
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -497,12 +498,12 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: veggies_19
+      name: lobster1
       rect:
         serializedVersion: 2
         x: 404
         y: 16
-        width: 80
+        width: 40
         height: 108
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -545,13 +546,33 @@ TextureImporter:
         width: 46
         height: 112
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
       spriteID: fca19737037e39349aaa5b542b44321b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lobster2
+      rect:
+        serializedVersion: 2
+        x: 444
+        y: 16
+        width: 40
+        height: 108
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 786220c44b278d746b3dc3905b8caa18
       vertices: []
       indices: 
       edges: []

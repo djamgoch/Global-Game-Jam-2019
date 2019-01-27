@@ -46,21 +46,28 @@ MonoBehaviour:
   sounds:
   - clip: {fileID: 8300000, guid: 64ff9102b087e534992a0b4d13a4312a, type: 3}
     name: Home
-    volume: 0.3
+    volume: 0.482
     pitch: 1
     loop: 0
     source: {fileID: 0}
     output: {fileID: 0}
   - clip: {fileID: 8300000, guid: 58e556f9c2bf08640a517749f561cc48, type: 3}
     name: SHMUP
-    volume: 0.384
+    volume: 0.516
     pitch: 1
     loop: 0
     source: {fileID: 0}
     output: {fileID: 0}
   - clip: {fileID: 8300000, guid: d8c6bdf7bb503d0458fa0f69a6da5207, type: 3}
     name: Knife
-    volume: 0.237
+    volume: 0.05
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    output: {fileID: 0}
+  - clip: {fileID: 8300000, guid: 71431f0cabc705443bf80be377ece6bc, type: 3}
+    name: Death
+    volume: 0.1
     pitch: 1
     loop: 0
     source: {fileID: 0}
