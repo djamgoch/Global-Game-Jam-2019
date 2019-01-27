@@ -8,6 +8,13 @@ public class CollisionController : MonoBehaviour
     public Text uiText;
 
     private string originalText;
+
+    private StoryManager storyManager;
+
+    void Awake() {
+        storyManager = GameObject.Find("Story Manager").GetComponent<StoryManager>();
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,12 +37,25 @@ public class CollisionController : MonoBehaviour
         if (other.gameObject.tag.Equals("Player")) {
             // change UI text to say press Enter
             if (Input.GetKeyDown(KeyCode.Return)) {
-                GameManager.instance.stateMachine.UpdateState();
+                // finish/initiate talking on couch
+                if (uiText.gameObject.name.Equals("Couch text")) {
+                    GameManager.instance.stateMachine.UpdateState();
+                }
+                // initiate cooking
+                else if (uiText.gameObject.name.Equals("Cook text")) {
+                    storyManager.SelectActivity(0);
+                }
+                // initiate sleeping
+                else {
+                    GameManager.instance.stateMachine.UpdateState();
+                }
+                
+                Debug.Log(GameManager.instance.stateMachine.state);
             }
         }
     }
 
-    void OnTriggerLeave(Collider other) {
+    void OnTriggerExit(Collider other) {
         if (other.gameObject.tag.Equals("Player")) {
             uiText.text = originalText;
         }

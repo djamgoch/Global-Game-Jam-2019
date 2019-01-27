@@ -45,7 +45,7 @@ public class StoryManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        AssessProgress();
+        UpdateProgress();
     }
 
     void ActivateCanvas(int c) {
@@ -79,7 +79,7 @@ public class StoryManager : MonoBehaviour
         }
     }
 
-    void AssessProgress() {
+    public void UpdateProgress() {
         switch ((int) GameManager.instance.stateMachine.state) {
             case (int) GameManager.State.Beginning:
                 ActivateCanvas(0);
