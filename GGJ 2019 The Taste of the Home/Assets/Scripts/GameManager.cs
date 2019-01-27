@@ -55,6 +55,8 @@ public class GameManager : MonoBehaviour
             //if (scene.name == mainMenuSceneName)
             //    GameManager.instance.audioManager.Play("Main Menu");
         }
+        currentStoryTextStartLine = "1";
+        currentStoryTextEndLine = "3";
     }
 
     public void Start()

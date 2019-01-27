@@ -693,6 +693,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameManager
       objectReference: {fileID: 0}
+    - target: {fileID: 7363327749598273370, guid: bf386d8ce5a843f49b29fc06e6bc8409,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7363327749598273368, guid: bf386d8ce5a843f49b29fc06e6bc8409,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -747,6 +752,36 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7363327749598273371, guid: bf386d8ce5a843f49b29fc06e6bc8409,
+        type: 3}
+      propertyPath: firstStoryTextStartLine
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7363327749598273371, guid: bf386d8ce5a843f49b29fc06e6bc8409,
+        type: 3}
+      propertyPath: firstStoryTextEndLine
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7363327749598273371, guid: bf386d8ce5a843f49b29fc06e6bc8409,
+        type: 3}
+      propertyPath: secondStoryTextStartLine
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7363327749598273371, guid: bf386d8ce5a843f49b29fc06e6bc8409,
+        type: 3}
+      propertyPath: secondStoryTextEndLine
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7363327749598273371, guid: bf386d8ce5a843f49b29fc06e6bc8409,
+        type: 3}
+      propertyPath: thirdStoryTextStartLine
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7363327749598273371, guid: bf386d8ce5a843f49b29fc06e6bc8409,
+        type: 3}
+      propertyPath: thirdStoryTextEndLine
+      value: 11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf386d8ce5a843f49b29fc06e6bc8409, type: 3}

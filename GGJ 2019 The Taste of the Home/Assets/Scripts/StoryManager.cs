@@ -19,6 +19,8 @@ public class StoryManager : MonoBehaviour
     public RPGTalk dialogueController;
 
     public string firstCookingSceneName;
+    public string secondCookingSceneName;
+    public string thirdCookingSceneName;
 
     public GameObject[] triggerCubes;
 
