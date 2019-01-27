@@ -5,10 +5,12 @@ using UnityEngine;
 public class Weapon : MonoBehaviour
 {
     public int damage;
-
+    public bool right;
     public int speed;
     public int spinSpeed;
-
+    public float		turnRate   = 5f;
+    public float		turnRateAcceleration = 18.0f;
+    public float       RotateSpeed = 20f;
     public float lifetime = 5f;
     private Rigidbody2D RB;
 
@@ -31,6 +33,22 @@ public class Weapon : MonoBehaviour
 
     public void Move()
     {
+        if(right){
+        Vector3	relativePosition =new Vector3(transform.position.x,transform.position.y,0f) - transform.position;
+        Quaternion	targetRotation   = Quaternion.LookRotation(relativePosition );
+        float	targetRotationAngle =targetRotation.eulerAngles.y;
+        float	currentRotationAngle =transform.eulerAngles.y;
+
+        currentRotationAngle = Mathf.LerpAngle(
+				currentRotationAngle,
+				targetRotationAngle,
+				turnRate * Time.deltaTime );
+
+        Quaternion	tiltedRotation = Quaternion.Euler( 0, currentRotationAngle, 0 );	
+        turnRate += turnRateAcceleration * Time.deltaTime;	
+        transform.rotation = tiltedRotation;	
+        transform.Translate ( new Vector3( 0f, 0f , RotateSpeed * Time.deltaTime) );
+        }
         RB.velocity = (Vector3.up * Time.deltaTime * speed);
         
             //spinSpeed * Time.deltaTime);
