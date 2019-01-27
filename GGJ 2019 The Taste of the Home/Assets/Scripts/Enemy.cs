@@ -32,9 +32,12 @@ public class Enemy : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        //Debug.Log("Colliding with " + collision.tag);
         if (collision.gameObject.tag == "Weapon")
         {
+            //Debug.Log("????");
             Hurt(collision.gameObject.GetComponent<Weapon>().damage);
+            //Debug.Log("What is the health " + health);
         }
     }
 

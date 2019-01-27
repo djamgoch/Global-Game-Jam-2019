@@ -38,6 +38,7 @@ public class Weapon : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        Debug.Log("Colliding with + " + collision.name + "  which is " + collision.tag);
         if (collision.gameObject.tag != "Player" && collision.gameObject.tag != "Boundry" && collision.gameObject.tag != "Weapon")
             Destroy(this.gameObject);
 
