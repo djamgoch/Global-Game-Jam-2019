@@ -97,13 +97,22 @@ public class Player : MonoBehaviour
         damageMultiplier = val;
     }
 
+    public void EnableMultipleKnives()
+    {
+        powerup = true;
+    }
+
     public void Move()
     {  
         if(powerup){
-            if(ShotWeapon3.transform.position.y>0.04f && ShotWeapon2!=null&& ShotWeapon3!=null)
+            if(ShotWeapon3)
             {
-            ShotWeapon3.transform.position= new Vector3(-ShotWeapon2.transform.position.x,ShotWeapon2.transform.position.y,ShotWeapon2.transform.position.z);
+                if (ShotWeapon3.transform.position.y > 0.04f && ShotWeapon2 != null && ShotWeapon3 != null)
+                {
+                    ShotWeapon3.transform.position = new Vector3(-ShotWeapon2.transform.position.x, ShotWeapon2.transform.position.y, ShotWeapon2.transform.position.z);
+                }
             }
+
         }
         
         

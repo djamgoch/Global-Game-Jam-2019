@@ -53,11 +53,13 @@ MonoBehaviour:
   - {fileID: 5371748781218072053, guid: e3ef63d24e760d34ba8b3d5756308805, type: 3}
   - {fileID: 4481238166427978282, guid: ccdb2d0a77091a14b8b0f8ebee7ce2a5, type: 3}
   - {fileID: 6628097917358424275, guid: 35d54cc2229bb6d4eb266bc3dafb2639, type: 3}
+  - {fileID: 777741077354242565, guid: 4308eac2db219314c829b0b7234c0fa9, type: 3}
   SpawnPercentages:
   - 0.2
   - 0.6
   - 0.15
   - 0.05
+  - 0
   Score: {fileID: 0}
   GameTime: 30
   timeIncrement: 0

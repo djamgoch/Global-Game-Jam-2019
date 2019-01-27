@@ -32,6 +32,8 @@ public class PowerUp : MonoBehaviour
         {
             if(DamageBoost)
                 other.gameObject.GetComponent<Player>().IncreaseDamageMultiplier(damageMultiplier);
+            if (MultipleWeapons)
+                other.gameObject.GetComponent<Player>().EnableMultipleKnives();
 
             Destroy(this.gameObject);
         }
