@@ -95,16 +95,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04a3967c54d7c8048b4212ee7eaee2f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MaxHealth: 25
   health: 100
   speed: 8
-  horizontalSpeed: 8
-  verticalSpeed: 5
-  damage: 1
+  horizontalSpeed: 14
+  verticalSpeed: 3
+  damageMultiplier: 1
   cooldown: 0.3
   shootTime: 0
-  inputVector: {x: 0, y: 0, z: 0}
   Knife: {fileID: 2230414322440947666, guid: c64b212545eda384c905ea5a343d1d9e, type: 3}
   ShootPoint: {fileID: 0}
+  healthBar: {fileID: 0}
 --- !u!61 &1892581196374038938
 BoxCollider2D:
   m_ObjectHideFlags: 0

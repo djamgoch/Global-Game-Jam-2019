@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    public int MaxHealth;
 
+    //[HideInInspector]
     public int health;
 
     [HideInInspector]
@@ -16,7 +18,7 @@ public class Player : MonoBehaviour
     private float goHorizontal = 0;
     private float goVertical = 0;
 
-    public int damage;
+    public int damageMultiplier;
 
     public float cooldown;
 
@@ -30,6 +32,8 @@ public class Player : MonoBehaviour
 
     [HideInInspector]
     public GameObject ShootPoint;
+
+    public HealthBar healthBar;
 
 
   public void PlayerInput()
@@ -73,7 +77,7 @@ public class Player : MonoBehaviour
         {
             shootTime = Time.time + cooldown;
             Weapon ShotWeapon = Instantiate(Knife, ShootPoint.transform.position, ShootPoint.transform.rotation).GetComponent<Weapon>();
-            ShotWeapon.damage = ShotWeapon.damage * damage;
+            ShotWeapon.damage = ShotWeapon.damage * damageMultiplier;
         }
         yield return null;
     }
@@ -91,11 +95,19 @@ public class Player : MonoBehaviour
         {
             Debug.LogError("Player can't find the shootpoint");
         }
+        health = MaxHealth;
+        healthBar = FindObjectOfType<HealthBar>();
     }
 
     public void Hurt(int damage_taken)
     {
         health -= damage_taken;
+        UpdateHealthBar();
+    }
+
+    public void UpdateHealthBar()
+    {
+        healthBar.UpdateValue((float) (health) / (float)(MaxHealth));
     }
 
     public void CheckDeath()
