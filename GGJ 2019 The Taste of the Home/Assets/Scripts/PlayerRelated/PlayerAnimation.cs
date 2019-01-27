@@ -55,7 +55,7 @@ public class PlayerAnimation : MonoBehaviour
     public void setMovingFlag(bool value)
     {
         isMoving = value;
-        timeMoving = 0f;
+        if (value = false) { timeMoving = 0f; }
     }
     public void doBlinkAnim()
     {

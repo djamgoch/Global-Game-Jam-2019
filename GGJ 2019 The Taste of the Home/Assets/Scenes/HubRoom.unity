@@ -15783,7 +15783,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh14884
+  m_Name: pb_Mesh22414
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -20498,31 +20498,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1188782497, guid: 02a7734660495f84c892d7e0ebc81f6f, type: 3}
       propertyPath: m_UseGravity
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1188782497, guid: 02a7734660495f84c892d7e0ebc81f6f, type: 3}
-      propertyPath: m_Mass
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1188782497, guid: 02a7734660495f84c892d7e0ebc81f6f, type: 3}
-      propertyPath: m_Constraints
-      value: 112
-      objectReference: {fileID: 0}
-    - target: {fileID: 1188782498, guid: 02a7734660495f84c892d7e0ebc81f6f, type: 3}
-      propertyPath: moveSpeed
-      value: 250
-      objectReference: {fileID: 0}
-    - target: {fileID: 1188782495, guid: 02a7734660495f84c892d7e0ebc81f6f, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1188782494, guid: 02a7734660495f84c892d7e0ebc81f6f, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1188782491, guid: 02a7734660495f84c892d7e0ebc81f6f, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 02a7734660495f84c892d7e0ebc81f6f, type: 3}
@@ -23953,25 +23929,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf386d8ce5a843f49b29fc06e6bc8409, type: 3}
---- !u!1 &1984725404 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1188782489, guid: 02a7734660495f84c892d7e0ebc81f6f,
-    type: 3}
-  m_PrefabInstance: {fileID: 1188782488}
-  m_PrefabAsset: {fileID: 0}
---- !u!65 &1984725405
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1984725404}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 2, y: 3, z: 3.8}
-  m_Center: {x: 0, y: 0, z: 2}
 --- !u!1 &2064061206
 GameObject:
   m_ObjectHideFlags: 0
