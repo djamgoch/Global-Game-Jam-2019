@@ -8,6 +8,8 @@ public class musicGameManager : MonoBehaviour
     public bool startplay;
     //public Beat_control B;
     public static musicGameManager instance;
+    public GameObject hitImage;
+    public GameObject missingImage;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,9 +31,19 @@ public class musicGameManager : MonoBehaviour
     }
     
     public void hitted(){
-        Debug.Log("hit_ontime");
+        
+        hitImage.SetActive(true);
+        Invoke("disappear", 1f);
     }
+   
     public void missed(){
-        Debug.Log("miss");
+        missingImage.SetActive(true);
+        //hitImage.SetActive(false);
+        Invoke("disappear", 1f);
+    }
+    
+     public void disappear(){
+        missingImage.SetActive(false);
+        hitImage.SetActive(false);
     }
 }

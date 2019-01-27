@@ -70,7 +70,8 @@ public class stir_food : MonoBehaviour
         
         //fail
          if(Mathf.Round(t.timer) <=0f){
-                stateIndex = cookState.failed;
+                m_SpriteRenderer.color = new Color(0f,0f,0f,1f);
+                //stateIndex = cookState.failed;
             }
         //3 round stir 
         if(Count >= 3){
