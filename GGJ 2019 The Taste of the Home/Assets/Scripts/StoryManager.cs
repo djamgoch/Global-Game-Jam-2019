@@ -15,4 +15,21 @@ public class StoryManager : MonoBehaviour
     {
         
     }
+
+    public void SelectActivity(int activity) {
+        switch (activity) {
+            case 0:
+                Debug.Log("Player selected cooking.");
+                break;
+            case 1:
+                Debug.Log("Player selected sleeping.");
+                break;
+            case 2:
+                Debug.Log("Player selecting talking to family member.");
+                break;
+            default:
+                Debug.Log("Error. No correct option selected!");
+                break;
+        }
+    }
 }
