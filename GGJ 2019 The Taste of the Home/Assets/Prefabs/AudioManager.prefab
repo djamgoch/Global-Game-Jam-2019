@@ -46,14 +46,14 @@ MonoBehaviour:
   sounds:
   - clip: {fileID: 8300000, guid: 64ff9102b087e534992a0b4d13a4312a, type: 3}
     name: Home
-    volume: 0.482
+    volume: 0.3
     pitch: 1
     loop: 0
     source: {fileID: 0}
     output: {fileID: 0}
   - clip: {fileID: 8300000, guid: b43b584df07ad3747b7d293921dbb6bf, type: 3}
     name: SHMUP
-    volume: 0.516
+    volume: 0.3
     pitch: 1
     loop: 0
     source: {fileID: 0}
@@ -68,6 +68,13 @@ MonoBehaviour:
   - clip: {fileID: 8300000, guid: 71431f0cabc705443bf80be377ece6bc, type: 3}
     name: Death
     volume: 0.1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    output: {fileID: 0}
+  - clip: {fileID: 8300000, guid: 229dc04e70d3e461c936196d9218b61c, type: 3}
+    name: Title
+    volume: 0.3
     pitch: 1
     loop: 0
     source: {fileID: 0}

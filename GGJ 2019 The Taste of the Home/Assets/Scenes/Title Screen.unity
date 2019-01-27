@@ -856,6 +856,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firstSceneName: HubRoom
+  SongToStop: Title
+  shouldIplayasong: 1
+  songtoPlay: Title
 --- !u!1 &1292233861
 GameObject:
   m_ObjectHideFlags: 0
