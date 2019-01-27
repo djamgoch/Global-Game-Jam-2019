@@ -30,6 +30,8 @@ public class Food1942Manager : MonoBehaviour
 
     public Text Timer;
 
+
+
     private void Awake()
     {
         if (instance == null)

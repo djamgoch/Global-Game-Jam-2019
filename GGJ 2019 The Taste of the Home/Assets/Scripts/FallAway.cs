@@ -11,7 +11,7 @@ public class FallAway : MonoBehaviour
     public bool left;
 
     [HideInInspector]
-    public float speed = 1.5f;
+    private float speed = 100f;
 
     [HideInInspector]
     public bool activated = false;
@@ -19,15 +19,21 @@ public class FallAway : MonoBehaviour
     [HideInInspector]
     public float lifeeeee = 0f;
 
+    [HideInInspector]
+    public float RotationSpeed = 1000f;
+
+    [HideInInspector]
+    Rigidbody2D rb;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        rb = GetComponent<Rigidbody2D>();
         //Destroy(this.gameObject, lifetime);
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
 
         if(activated)
@@ -42,9 +48,11 @@ public class FallAway : MonoBehaviour
                 movementDirection = Vector3.right;
             }
 
-            movementDirection += (Vector3.down * 1.5f);
+            movementDirection += (Vector3.down * 2f);
 
-            transform.Translate(movementDirection * Time.deltaTime * speed);
+            rb.velocity = (movementDirection * Time.deltaTime * speed);
+            //transform.Translate(movementDirection * Time.deltaTime * speed);
+            rb.rotation += Time.deltaTime * RotationSpeed;
         }
 
         

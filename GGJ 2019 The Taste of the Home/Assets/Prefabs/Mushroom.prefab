@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4494737186829545217}
   - component: {fileID: 5391745232230677150}
   - component: {fileID: 4541009403393510042}
+  - component: {fileID: 328783015583953466}
   m_Layer: 0
   m_Name: left
   m_TagString: enemy
@@ -97,6 +98,28 @@ MonoBehaviour:
   speed: 1.5
   activated: 0
   lifeeeee: 0
+  RotationSpeed: 0
+--- !u!50 &328783015583953466
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3095507404057991979}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &3534055066689351453
 GameObject:
   m_ObjectHideFlags: 0
@@ -108,6 +131,7 @@ GameObject:
   - component: {fileID: 8568200933198692308}
   - component: {fileID: 5870782158428315825}
   - component: {fileID: 94688248654803091}
+  - component: {fileID: 5607350087074489293}
   m_Layer: 0
   m_Name: right
   m_TagString: enemy
@@ -194,6 +218,28 @@ MonoBehaviour:
   speed: 1.5
   activated: 0
   lifeeeee: 0
+  RotationSpeed: 0
+--- !u!50 &5607350087074489293
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3534055066689351453}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &5371748781218072053
 GameObject:
   m_ObjectHideFlags: 0
