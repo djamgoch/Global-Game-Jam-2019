@@ -11,6 +11,7 @@ TagManager:
   - scoop
   - button
   - Dead
+  - Powerup
   layers:
   - Default
   - TransparentFX

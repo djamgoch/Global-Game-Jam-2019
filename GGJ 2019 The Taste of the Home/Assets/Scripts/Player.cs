@@ -83,6 +83,11 @@ public class Player : MonoBehaviour
         yield return null;
     }
 
+    public void IncreaseDamageMultiplier(int val)
+    {
+        damageMultiplier = val;
+    }
+
     public void Move()
     {
         transform.Translate(Vector3.up * goVertical * Time.deltaTime * verticalSpeed);
