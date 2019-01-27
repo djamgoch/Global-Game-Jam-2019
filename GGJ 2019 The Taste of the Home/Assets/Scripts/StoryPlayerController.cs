@@ -58,23 +58,23 @@ public class StoryPlayerController : MonoBehaviour
         Vector3 direction = Vector3.zero;
         if (Input.GetKey(KeyCode.W)) {
             direction += Vector3.forward;
-            // transform.rotation = Quaternion.Euler(new Vector3(-90f, 0f, 0f));
+            transform.rotation = Quaternion.Euler(new Vector3(-90f, 0f, 0f));
         }
         if (Input.GetKey(KeyCode.S)) {
             direction += Vector3.back;
-            // transform.rotation = Quaternion.Euler(new Vector3(-90f, 180f, 0f));
+            transform.rotation = Quaternion.Euler(new Vector3(-90f, 180f, 0f));
         }
         if (Input.GetKey(KeyCode.A)) {
             direction += Vector3.left;
-            // transform.rotation = Quaternion.Euler(new Vector3(-90f, -90f, 0f));
+            transform.rotation = Quaternion.Euler(new Vector3(-90f, -90f, 0f));
         }
         if (Input.GetKey(KeyCode.D)) {
             direction += Vector3.right;
-            // transform.rotation = Quaternion.Euler(new Vector3(-90f, 90f, 0f));
+            transform.rotation = Quaternion.Euler(new Vector3(-90f, 90f, 0f));
         }
 
-        Vector3 movement = direction.normalized * moveSpeed;
-        transform.LookAt(transform.position + movement);
+        Vector3 movement = direction.normalized * moveSpeed * Time.deltaTime;
+        // transform.LookAt(transform.position + movement);
         //transform.rotation = Quaternion.Euler(new Vector3(-90, transform.rotation.y, transform.rotation.z));
         rb.velocity = movement;
 
