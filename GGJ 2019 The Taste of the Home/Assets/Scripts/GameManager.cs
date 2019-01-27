@@ -14,6 +14,11 @@ public class GameManager : MonoBehaviour
 
     public int TotalScore; 
 
+    public string LastMinigameSceneForCooking = "fry pan";
+
+    [HideInInspector]
+    public StateMachine stateMachine { get; private set; }
+
     private void Awake()
     {
         if (instance == null)
@@ -37,7 +42,8 @@ public class GameManager : MonoBehaviour
 
     public void Start()
     {
-        
+        stateMachine = new StateMachine();
+        SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
     public void UpdateScore(int score)
@@ -65,9 +71,43 @@ public class GameManager : MonoBehaviour
         instance.audioManager.SetSoundEffectVolume(volume);
     }
 
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode) {
+        if (scene.name == LastMinigameSceneForCooking) {
+            stateMachine.UpdateState(State.CookedFood);
+        }
+    }
+
     public void Update()
     {
         
+    }
+
+    public class StateMachine {
+        public State state { get; private set; }
+
+        public StateMachine() {
+            state = State.Beginning;
+        }
+
+        public void UpdateState() {
+            if (state == State.Slept) {
+                state = State.Beginning;
+            }
+            else
+                state++;
+        }
+
+        public void UpdateState(State s) {
+            state = s;
+        }
+    }
+
+    public enum State {
+        Beginning=0,
+        TalkedToPersonOnCouch,
+        CookedFood,
+        CompletedFoodResultCutscene,
+        Slept,
     }
 
 
