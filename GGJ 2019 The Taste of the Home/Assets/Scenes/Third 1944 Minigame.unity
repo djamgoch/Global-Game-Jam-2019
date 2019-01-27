@@ -2018,16 +2018,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1892581196374038935, guid: 199b2cbbfd0f12c4a8478c531cda844e,
-        type: 3}
-      propertyPath: healthBar
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1892581196374038935, guid: 199b2cbbfd0f12c4a8478c531cda844e,
-        type: 3}
-      propertyPath: MaxHealth
-      value: 50
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 199b2cbbfd0f12c4a8478c531cda844e, type: 3}
 --- !u!1001 &7363327748800967910
@@ -2168,6 +2158,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7461998702526009175, guid: 46ce5d0f602839d40b4ca4fd759edb79,
         type: 3}
+      propertyPath: Enemies.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7461998702526009175, guid: 46ce5d0f602839d40b4ca4fd759edb79,
+        type: 3}
+      propertyPath: SpawnPercentages.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7461998702526009175, guid: 46ce5d0f602839d40b4ca4fd759edb79,
+        type: 3}
       propertyPath: Score
       value: 
       objectReference: {fileID: 1542730801}
@@ -2219,6 +2219,17 @@ PrefabInstance:
     - target: {fileID: 7461998702526009175, guid: 46ce5d0f602839d40b4ca4fd759edb79,
         type: 3}
       propertyPath: SpawnPercentages.Array.data[3]
+      value: 0.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 7461998702526009175, guid: 46ce5d0f602839d40b4ca4fd759edb79,
+        type: 3}
+      propertyPath: Enemies.Array.data[4]
+      value: 
+      objectReference: {fileID: 777741077354242565, guid: 4308eac2db219314c829b0b7234c0fa9,
+        type: 3}
+    - target: {fileID: 7461998702526009175, guid: 46ce5d0f602839d40b4ca4fd759edb79,
+        type: 3}
+      propertyPath: SpawnPercentages.Array.data[4]
       value: 0.07
       objectReference: {fileID: 0}
     m_RemovedComponents: []

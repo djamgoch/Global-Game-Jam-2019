@@ -2219,7 +2219,12 @@ PrefabInstance:
     - target: {fileID: 7461998702526009175, guid: 46ce5d0f602839d40b4ca4fd759edb79,
         type: 3}
       propertyPath: SpawnPercentages.Array.data[3]
-      value: 0.05
+      value: 0.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 7461998702526009175, guid: 46ce5d0f602839d40b4ca4fd759edb79,
+        type: 3}
+      propertyPath: SpawnPercentages.Array.data[4]
+      value: 0.02
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 46ce5d0f602839d40b4ca4fd759edb79, type: 3}

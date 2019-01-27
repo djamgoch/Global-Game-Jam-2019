@@ -96,6 +96,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxHealth: 25
+  powerup: 0
   health: 100
   speed: 8
   horizontalSpeed: 14
@@ -104,6 +105,8 @@ MonoBehaviour:
   cooldown: 0.3
   shootTime: 0
   Knife: {fileID: 2230414322440947666, guid: c64b212545eda384c905ea5a343d1d9e, type: 3}
+  Knife2: {fileID: 664726193120852050, guid: 991d9b2d4dbb74685a371a18f65aa231, type: 3}
+  Knife3: {fileID: 6053091635004027554, guid: f8198da35415e400582667c65dbfe94f, type: 3}
   ShootPoint: {fileID: 0}
   healthBar: {fileID: 0}
 --- !u!61 &1892581196374038938
