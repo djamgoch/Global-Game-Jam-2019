@@ -9,6 +9,9 @@ public class GameManager : MonoBehaviour
 
     public static GameManager instance;
 
+    public AudioManager audioManager;
+    public GameObject AudioManagerPrefab;
+
     public int TotalScore; 
 
     private void Awake()
@@ -20,6 +23,16 @@ public class GameManager : MonoBehaviour
         }
         else if (instance != this)
             Destroy(gameObject);
+
+        if (instance.audioManager == null)
+        {
+            audioManager = Instantiate(AudioManagerPrefab).GetComponent<AudioManager>();
+            audioManager.gameObject.name = "AudioManager"; //I don't like it being named "Clone"
+            Debug.Log("Making audimanager");
+            DontDestroyOnLoad(audioManager);
+            //if (scene.name == mainMenuSceneName)
+            //    GameManager.instance.audioManager.Play("Main Menu");
+        }
     }
 
     public void Start()
@@ -33,6 +46,25 @@ public class GameManager : MonoBehaviour
         Debug.Log("At the end of the round the score is now " + TotalScore);
     }
 
+    public void Mute()
+    {
+        instance.audioManager.Mute();
+    }
+    public void SetMasterVolume(float volume)
+    {
+        instance.audioManager.SetMasterVolume(volume); // calling a function on audiomanager
+    }
+
+    public void SetMusicVolume(float volume)
+    {
+        instance.audioManager.SetMusicVolume(volume);
+    }
+
+    public void SetSoundEffectVolume(float volume)
+    {
+        instance.audioManager.SetSoundEffectVolume(volume);
+    }
+
     public void Update()
     {
         
@@ -42,25 +74,3 @@ public class GameManager : MonoBehaviour
 }
 
 
-/*
-
-// Returns the current inputManager
-private static AudioManager _audioManager;
-
-public static AudioManager audioManager
-{
-get {
-    if (_audioManager != null)
-        return _audioManager;
-    _audioManager = FindObjectOfType<AudioManager>();
-    if (_audioManager == null)
-    {
-        Debug.LogWarning("Audio Manager not found, Created new Audio Manager.");
-        _audioManager = new GameObject("Audio Manager").AddComponent<AudioManager>();
-        GameObject g = GameObject.Find("Managers");
-        _audioManager.transform.SetParent(g != null ? g.transform : new GameObject("Managers").transform);
-    }
-    return _audioManager;
-}
-}
-*/

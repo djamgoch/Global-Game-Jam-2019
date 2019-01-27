@@ -2,17 +2,26 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
-public class GoToFirstScene : MonoBehaviour
+public class MainMenu : MonoBehaviour
 {
-    public string firstSceneName;
     // Start is called before the first frame update
-    public void OnClick()
+
+    public string firstSceneName;
+
+    public void StartGame()
     {
         SceneManager.LoadScene(firstSceneName);
     }
 
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
 
+    void Start()
+    {
+        
+    }
 
     // Update is called once per frame
     void Update()
