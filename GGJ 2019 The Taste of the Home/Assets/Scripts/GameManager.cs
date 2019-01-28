@@ -35,7 +35,7 @@ public class GameManager : MonoBehaviour
     [HideInInspector]
     public StateMachine stateMachine { get; private set; }
 
-    private int storyHubCounter = 0;
+    public int storyHubCounter = 0;
 
 
     public int HubCount;
@@ -170,6 +170,8 @@ public class GameManager : MonoBehaviour
                 currentStoryTextEndLine = thirdStoryTextEndLine;
             }
         }
+        if (scene.name == "Title Screen") 
+            storyHubCounter = 0;
     }
 
     public void Update()

@@ -76,6 +76,19 @@ public class StoryManager : MonoBehaviour
         switch (activity) {
             case 0:
                 Debug.Log("Player selected cooking.");
+                switch (GameManager.instance.storyHubCounter) {
+                    case 1:
+                        GameManager.instance.LoadScene(firstCookingSceneName);
+                        break;
+                    case 2: 
+                        GameManager.instance.LoadScene(secondCookingSceneName);
+                        break;
+                    case 3:
+                        GameManager.instance.LoadScene(thirdCookingSceneName);
+                        break;
+                    default:
+                        break;
+                }
                 GameManager.instance.LoadScene(firstCookingSceneName);
                 break;
             case 1:
