@@ -809,8 +809,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb16f9c1e91569a4ba97dbfeb6e8d633, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firstSceneName: HubRoom
+  firstSceneName: Second 1944 Minigame
   SongToStop: SHMUP
+  shouldIplayasong: 0
+  songtoPlay: 
 --- !u!1 &954060092
 GameObject:
   m_ObjectHideFlags: 0
@@ -1762,7 +1764,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.31749922, y: 0.18}
   m_AnchorMax: {x: 0.71750087, y: 0.25750628}
-  m_AnchoredPosition: {x: -2, y: -2.2999802}
+  m_AnchoredPosition: {x: -2, y: -2.2999878}
   m_SizeDelta: {x: 0, y: -1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1971045389
