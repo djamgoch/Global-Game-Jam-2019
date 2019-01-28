@@ -112,7 +112,7 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            return "Main Menu";
+            return "CreditsScene";
         }
     }
 
