@@ -855,7 +855,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb16f9c1e91569a4ba97dbfeb6e8d633, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firstSceneName: First 1944 Minigame
+  firstSceneName: HubRoom
   SongToStop: Title
   shouldIplayasong: 1
   songtoPlay: Title
