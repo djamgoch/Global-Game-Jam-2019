@@ -37,6 +37,11 @@ public class GameManager : MonoBehaviour
 
     private int storyHubCounter = 0;
 
+
+    public int HubCount;
+
+    public int SHMUPCount;
+
     private void Awake()
     {
         if (instance == null)
@@ -57,13 +62,60 @@ public class GameManager : MonoBehaviour
         }
         currentStoryTextStartLine = "1";
         currentStoryTextEndLine = "3";
+
+        UnityEngine.SceneManagement.SceneManager.sceneLoaded += onSceneLoaded;
     }
 
     public void Start()
     {
         stateMachine = new StateMachine();
-        SceneManager.sceneLoaded += OnSceneLoaded;
+       // SceneManager.sceneLoaded += OnSceneLoaded;
+
+
     }
+
+    void onSceneLoaded(UnityEngine.SceneManagement.Scene scene, UnityEngine.SceneManagement.LoadSceneMode mode)
+    {
+        if (instance == this)
+        {
+            string name = scene.name;
+            if (name == "HubRoom")
+            {
+                HubCount = HubCount + 1;
+            }
+            else if(name == "Title Screen")
+            {
+                //do fucking nothing
+            }
+            else
+            {
+                SHMUPCount = SHMUPCount + 1;
+            }
+        }
+    }
+
+
+
+    public string NextSHMUPScene()
+    {
+        if (HubCount == 1)
+        {
+            return "First 1944 Minigame";
+        }
+        else if (HubCount == 2)
+        {
+            return "Second 1944 Minigame";
+        }
+        else if(HubCount == 3)
+        {
+            return "Third 1944 Minigame";
+        }
+        else
+        {
+            return "Main Menu";
+        }
+    }
+
 
     public void UpdateScore(int score)
     {

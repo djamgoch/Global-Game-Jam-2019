@@ -9,7 +9,7 @@ public class HubRoomManager : MonoBehaviour
     public static HubRoomManager instance;
 
 
-    string SHMUPSCENE = "1944 Minigame";
+    //string SHMUPSCENE = "1944 Minigame";
 
 
     private void Awake()
@@ -29,7 +29,9 @@ public class HubRoomManager : MonoBehaviour
     public void NextScene()
     {
         GameManager.instance.audioManager.Stop("Home");
-        SceneManager.LoadScene(SHMUPSCENE);
+        string sceneToLoad = GameManager.instance.NextSHMUPScene();
+        SceneManager.LoadScene(sceneToLoad);
+        //ceneManager.LoadScene(SHMUPSCENE);
     }
     // Start is called before the first frame update
     void Start()
