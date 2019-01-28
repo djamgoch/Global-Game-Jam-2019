@@ -29,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Third 1944 Minigame.unity
     guid: fa0b01d8d2b29484abfd1585625ca816
+  - enabled: 1
+    path: Assets/Scenes/CreditsScene.unity
+    guid: 944c1239e44e86e4192dcefb43bdda52
   m_configObjects: {}
